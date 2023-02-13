@@ -1,0 +1,2 @@
+
+ next-roi => 1666688005000 => {"user_id":"60","currency":"BNB","user_stake_id":3,"transaction_type":"roi-income","credit":"0.5","comment":"Roi Income From Staking Plan","withdraw_credit":"0.5"}

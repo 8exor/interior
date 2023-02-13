@@ -1,0 +1,127 @@
+export const TokenCreateRule = ({
+    image: 'required',
+    name: 'required|string',
+    status: 'required|string|alpha|in:ongoing,past,upcoming',
+    total_limits: 'required|integer',
+    verification_score: 'required|numeric|min:1',
+    symbol: 'required|string|alpha',
+    hash_tags: 'array',
+    // social_media_link:
+    'social_media_link.facebook': 'url',
+    'social_media_link.twitter': 'url',
+    'social_media_link.linkedin': 'url',
+    'social_media_link.telegram': 'url',
+    token_url: 'required|url',
+    video_link: 'required|url',
+    project_summary: 'required',
+    whitepaper_link: 'required',
+    // token_economics:
+    'token_economics.max_token': 'string',
+    'token_economics.circulating': 'string',
+    'token_economics.market_cap': 'string',
+    'token_economics.initial_supply': 'numeric',
+    'token_economics.token_type': 'string',
+    'token_economics.issuer': 'string',
+    // token_allocation:
+    'token_allocation.team': 'numeric|max:99',
+    'token_allocation.advisors': 'numeric|max:99',
+    'token_allocation.treasury': 'numeric|max:99',
+    'token_allocation.marketing': 'numeric|max:99',
+    'token_allocation.staking': 'numeric|max:99',
+    'token_allocation.play_earn': 'numeric|max:99',
+    'token_allocation.seed_round': 'numeric|max:99',
+    'token_allocation.private_round': 'numeric|max:99',
+    'token_allocation.public_round': 'numeric|max:99',
+    'token_allocation.float_liquidity': 'numeric|max:99',
+    company_highlight: 'required',
+    // use_of_funds:
+    'use_of_funds.liquidity': 'numeric',
+    'use_of_funds.business_development': 'numeric',
+    'use_of_funds.marketing_and_bounty': 'numeric',
+    'use_of_funds.reserve': 'numeric',
+    // fund_raising:
+    'fund_raising.total_round': 'numeric',
+    'fund_raising.raise_desc': 'string',
+    'fund_raising.min_invest': 'numeric',
+    'fund_raising.coin_type': 'string',
+    'fund_raising.offer_type': 'string',
+    partnerships: 'url|array',
+    gallery: 'required|array',
+    disclaimer: 'required',
+    started_at: 'required|date',
+    expired_at: 'required|date'
+});
+
+export const RoundCreateRule = ({
+    launch_token_id: 'required',
+    currency: 'required',
+    // rounds:
+    'rounds.*.started_at': 'required|date',
+    'rounds.*.expired_at': 'required|date',
+    'rounds.*.min_amt': 'required|numeric|min:1',
+    'rounds.*.max_amt': 'required|numeric',
+    'rounds.*.price': 'required|numeric',
+    'rounds.*.total_limits': 'required|numeric',
+    'rounds.*.currency': 'required|string',
+    'rounds.*.status': 'boolean'
+});
+
+export const OrderPlaceRule = ({
+    launch_token_id: 'required',
+    launch_round_id: 'required',
+    amount: 'required|numeric|min:1',
+    currency: 'required|string'
+});
+
+export const UpdateTokenRule = ({
+    image: 'string',
+    name: 'string',
+    status: 'string',
+    verification_score: 'numeric|min:1',
+    symbol: 'string',
+    hash_tags: 'array',
+    // social_media_link:
+    'social_media_link.facebook': 'url',
+    'social_media_link.twitter': 'url',
+    'social_media_link.linkedin': 'url',
+    'social_media_link.telegram': 'url',
+    token_url: 'url',
+    video_link: 'url',
+    project_summary: 'string',
+    whitepaper_link: 'string',
+    // token_economics:
+    'token_economics.max_token': 'string',
+    'token_economics.circulating': 'string',
+    'token_economics.market_cap': 'string',
+    'token_economics.initial_supply': 'numeric',
+    'token_economics.token_type': 'string',
+    'token_economics.issuer': 'string',
+    // token_allocation:
+    'token_allocation.team': 'numeric|max:99',
+    'token_allocation.advisors': 'numeric|max:99',
+    'token_allocation.treasury': 'numeric|max:99',
+    'token_allocation.marketing': 'numeric|max:99',
+    'token_allocation.staking': 'numeric|max:99',
+    'token_allocation.play_earn': 'numeric|max:99',
+    'token_allocation.seed_round': 'numeric|max:99',
+    'token_allocation.private_round': 'numeric|max:99',
+    'token_allocation.public_round': 'numeric|max:99',
+    'token_allocation.float_liquidity': 'numeric|max:99',
+    company_highlight: 'string',
+    // use_of_funds:
+    'use_of_funds.liquidity': 'numeric',
+    'use_of_funds.business_development': 'numeric',
+    'use_of_funds.marketing_and_bounty': 'numeric',
+    'use_of_funds.reserve': 'numeric',
+    // fund_raising:
+    'fund_raising.total_round': 'numeric',
+    'fund_raising.raise_desc': 'string',
+    'fund_raising.min_invest': 'numeric',
+    'fund_raising.coin_type': 'string',
+    'fund_raising.offer_type': 'string',
+    partnerships: 'url|array',
+    gallery: 'array',
+    disclaimer: 'string',
+    started_at: 'date',
+    expired_at: 'date',
+});
